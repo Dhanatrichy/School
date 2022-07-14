@@ -1,0 +1,10 @@
+<?php
+include('includes/database.php');
+unset($_SESSION['teacher_id']);
+unset($_SESSION['school_id']);
+unset($_SESSION['teacher_name']);
+unset($_SESSION['teacher_email']);
+unset($_SESSION['user_type']);
+session_destroy();
+header("Location:../index.php");
+?>
