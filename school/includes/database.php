@@ -7,8 +7,8 @@ session_start();
 class DB {
 
     public $db_name = 'u600126134_lms';
-    public $db_user = 'u600126134_lms';
-    public $db_pass = 'jK]Ukf[pRc8';
+    public $db_user = 'root';
+    public $db_pass = '';
     public $db_host = 'localhost';
 
     function connect() {

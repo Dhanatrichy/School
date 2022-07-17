@@ -46,6 +46,24 @@ $page_name  = basename($_SERVER['PHP_SELF']);
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="class.php" class="nav-link <?php if($page_name=='class.php'){ ?> active <?php } ?>">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Class Management
+                        </p>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="section.php" class="nav-link <?php if($page_name=='section.php'){ ?> active <?php } ?>">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Section Management
+                        </p>
+                    </a>
+                </li>
                 
                 <li class="nav-item">
                     <a href="period.php" class="nav-link <?php if($page_name=='period.php'){ ?> active <?php } ?>">
