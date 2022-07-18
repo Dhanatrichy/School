@@ -26,6 +26,9 @@ include('includes/database.php');
                             <div class="col-sm-6">
                                 <h1 class="m-0">View Teacher</h1>
                             </div><!-- /.col -->
+
+                            
+
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -49,6 +52,13 @@ include('includes/database.php');
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-file-alt"></i> View Teacher</h3>
                                     </div>
+
+                                    <div class="card-footer">
+                                    <a href="add-teacher.php">
+                                            <button type="submit" name="submit" class="btn btn-primary">Add Teacher</button>
+                                            </a>
+                                        </div>
+
                                     <div class="card-body">
                                         <table id="example1" class="table table-bordered table-striped">
                                             <thead>
@@ -94,6 +104,7 @@ include('includes/database.php');
                                                 }
                                                 ?>
                                             </tbody>
+                                           
                                         </table>
                                     </div>
                                     <!-- /.card-body -->
@@ -103,7 +114,9 @@ include('includes/database.php');
                         <!-- /.card -->
                     </div><!-- /.container-fluid -->
                     
-                    
+                    <div class="card-footer">
+                                            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                        </div>
                     <div class="modal fade" id="modal-lg">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">

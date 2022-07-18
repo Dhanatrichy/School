@@ -51,6 +51,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                 <section class="content">
                     <div class="container-fluid">
                         <div class="row">
+                            
                             <!-- left column -->
                             <div class="col-md-12">
                                 <!-- general form elements -->
@@ -58,6 +59,12 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-plus-square"></i> Add Teacher</h3>
                                     </div>
+
+                                    <div class="card-footer">
+                                    <a href="view-teacher.php">
+                                            <button type="submit" name="submit" class="btn btn-primary">Back to View Teacher</button>
+                                            </a>
+                                        </div>
                                     <!-- /.card-header -->
                                     <!-- form start -->
                                     <form method="post" name="teacher_form" id="teacher_form">

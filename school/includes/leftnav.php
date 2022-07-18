@@ -18,7 +18,7 @@ $page_name  = basename($_SERVER['PHP_SELF']);
                 <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Admin</a>
+                <a href="#" class="d-block">School</a>
             </div>
         </div>
 
@@ -47,7 +47,43 @@ $page_name  = basename($_SERVER['PHP_SELF']);
                     </a>
                 </li>
 
+                <li class="nav-item <?php if($page_name=='class.php' || $page_name=='section.php'|| $page_name=='assign_class.php'){ ?> menu-open <?php } ?>">
+                    <a href="#" class="nav-link <?php if($page_name=='class' || $page_name==''){ ?> active <?php } ?>">
+                        <i class="nav-icon fab fa-product-hunt"></i>
+                        <p>
+                            Master
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                    <a href="class.php" class="nav-link <?php if($page_name=='class.php'){ ?> active <?php } ?>">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Class Management
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item">
+                    <a href="section.php" class="nav-link <?php if($page_name=='section.php'){ ?> active <?php } ?>">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Section Management
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="assign_class.php" class="nav-link <?php if($page_name=='assign_class.php'){ ?> active <?php } ?>">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Subject Allocation
+                        </p>
+                    </a>
+                </li>
+                    </ul>
+                </li>
+
+                <!-- <li class="nav-item">
                     <a href="class.php" class="nav-link <?php if($page_name=='class.php'){ ?> active <?php } ?>">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
@@ -64,7 +100,7 @@ $page_name  = basename($_SERVER['PHP_SELF']);
                         </p>
                     </a>
                 </li>
-                
+                 -->
                 <li class="nav-item">
                     <a href="period.php" class="nav-link <?php if($page_name=='period.php'){ ?> active <?php } ?>">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -74,14 +110,14 @@ $page_name  = basename($_SERVER['PHP_SELF']);
                     </a>
                 </li>
                 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="assign_class.php" class="nav-link <?php if($page_name=='assign_class.php'){ ?> active <?php } ?>">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Subject Allocation
                         </p>
                     </a>
-                </li>
+                </li> -->
                 
                 <li class="nav-item">
                     <a href="time_table.php" class="nav-link <?php if($page_name=='time_table.php'){ ?> active <?php } ?>">
@@ -91,9 +127,18 @@ $page_name  = basename($_SERVER['PHP_SELF']);
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="view-teacher.php" class="nav-link <?php if($page_name=='view-teacher.php'){ ?> active <?php } ?>">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                        Teacher Management
+                        </p>
+                    </a>
+                </li>
                 
                 
-                <li class="nav-item <?php if($page_name=='add-teacher.php' || $page_name=='view-teacher.php'){ ?> menu-open <?php } ?>">
+                <!-- <li class="nav-item <?php if($page_name=='add-teacher.php' || $page_name=='view-teacher.php'){ ?> menu-open <?php } ?>">
                     <a href="#" class="nav-link <?php if($page_name=='add-teacher' || $page_name=='view-teacher.php'){ ?> active <?php } ?>">
                         <i class="nav-icon fab fa-product-hunt"></i>
                         <p>
@@ -119,7 +164,7 @@ $page_name  = basename($_SERVER['PHP_SELF']);
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 
                 <li class="nav-item <?php if($page_name=='add-student.php' || $page_name=='view-student.php'){ ?> menu-open <?php } ?>">
                     <a href="#" class="nav-link <?php if($page_name=='add-student' || $page_name=='view-student.php'){ ?> active <?php } ?>">
