@@ -6,21 +6,20 @@ if (!isset($_SESSION['admin_id'])) {
 $action = 'submit';
 $id = base64_decode($_GET['id']);
 if ($_GET['action'] == "edit" && isset($_GET['id'])) {
-    $max = "select * from tbl_subject where id='" . $id . "'";
+    $max = "select * from tbl_class where id='" . $id . "'";
     $max2 = mysqli_query($db, $max);
     $max3 = mysqli_fetch_assoc($max2);
     extract($max3);
     $update = 1;
 }
 ?>
-<!-- //test -->
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Subject | LMS</title>
+        <title>Classes | LMS</title>
 
         <?php include_once 'includes/header.php'; ?>
     </head>
@@ -37,12 +36,12 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1 class="m-0">Add / View Subject</h1>
+                                <h1 class="m-0">Add / View Class</h1>
                             </div><!-- /.col -->
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active">Subject</li>
+                                    <li class="breadcrumb-item active">Class</li>
                                 </ol>
                             </div><!-- /.col -->
                         </div><!-- /.row -->
@@ -59,19 +58,19 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                 <!-- general form elements -->
                                 <div class="card card-primary">
                                     <div class="card-header">
-                                        <h3 class="card-title"><i class="fas fa-plus-square"></i> Add Subject</h3>
+                                        <h3 class="card-title"><i class="fas fa-plus-square"></i> Add Class</h3>
                                     </div>
                                     <!-- /.card-header -->
                                     <!-- form start -->
-                                    <form method="post" name="subject_form" id="subject_form">
+                                    <form method="post" name="class_form" id="class_form">
                                         <input type="hidden" name="action" value="<?php echo $action; ?>">
                                         <input type="hidden" name="id" value="<?php echo $id; ?>">
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label for="name">Subject Name</label>
-                                                        <input type="text" class="form-control" id="name" name="name" placeholder="Subject Name" value="<?php echo $name; ?>">
+                                                        <label for="name">Class Name</label>
+                                                        <input type="text" class="form-control" id="name" name="name" placeholder="Class Name" value="<?php echo $name; ?>">
                                                     </div>
                                                 </div>
                                             </div>
@@ -85,20 +84,20 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
 
                                 <div class="card card-info">
                                     <div class="card-header">
-                                        <h3 class="card-title"><i class="fas fa-file-alt"></i> View Subject</h3>
+                                        <h3 class="card-title"><i class="fas fa-file-alt"></i> View Class</h3>
                                     </div>
                                     <div class="card-body">
                                         <table id="example1" class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>Subject Name</th>
+                                                    <th>Class Name</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $query = "SELECT * FROM tbl_subject ORDER BY name ASC";
+                                                $query = "SELECT * FROM tbl_class ORDER BY name ASC";
                                                 $result = mysqli_query($db, $query);
                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                     ?>
@@ -106,15 +105,15 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                         <td><?php echo $row['name']; ?></td>
                                                         <td>
                                                             <?php if ($row['status'] == 'active') { ?>
-                                                            <a href="javascript:void(0);" class="status_<?php echo $row['id']; ?>"><span class="badge bg-success" onclick="change_status(<?php echo $row['id']; ?>, 'inactive', 'modules/subject/request.php')">Active</span></a>
+                                                            <a href="javascript:void(0);" class="status_<?php echo $row['id']; ?>"><span class="badge bg-success" onclick="change_status(<?php echo $row['id']; ?>, 'inactive', 'modules/class/request.php')">Active</span></a>
                                                             <?php } else { ?>
-                                                            <a href="javascript:void(0);" class="status_<?php echo $row['id']; ?>"><span class="badge bg-danger" onclick="change_status(<?php echo $row['id']; ?>, 'active', 'modules/subject/request.php')">Inactive</span></a>
+                                                            <a href="javascript:void(0);" class="status_<?php echo $row['id']; ?>"><span class="badge bg-danger" onclick="change_status(<?php echo $row['id']; ?>, 'active', 'modules/class/request.php')">Inactive</span></a>
                                                             <?php } ?>		
                                                         </td>
                                                         <td >
                                                             <div class="btn-group btn-group-sm">
-                                                                <a href="subject.php?id=<?php echo base64_encode($row['id']); ?>&action=edit" class="btn btn-info"><i class="fas fa-eye"></i></a>
-                                                                <a href="javascript:void(0);" class="btn btn-danger"><i onclick="delete_detail(<?php echo $row['id']; ?>, 'modules/subject/request.php')" class="fas fa-trash"></i></a>
+                                                                <a href="class.php?id=<?php echo base64_encode($row['id']); ?>&action=edit" class="btn btn-info"><i class="fas fa-eye"></i></a>
+                                                                <a href="javascript:void(0);" class="btn btn-danger"><i onclick="delete_detail(<?php echo $row['id']; ?>, 'modules/class/request.php')" class="fas fa-trash"></i></a>
                                                             </div>
                                                         </td>
                                                     </tr>
