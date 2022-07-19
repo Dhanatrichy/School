@@ -136,6 +136,15 @@ $page_name  = basename($_SERVER['PHP_SELF']);
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="view-student.php" class="nav-link <?php if($page_name=='view-student.php'){ ?> active <?php } ?>">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                        Student Management
+                        </p>
+                    </a>
+                </li>
                 
                 
                 <!-- <li class="nav-item <?php if($page_name=='add-teacher.php' || $page_name=='view-teacher.php'){ ?> menu-open <?php } ?>">
@@ -166,7 +175,7 @@ $page_name  = basename($_SERVER['PHP_SELF']);
                     </ul>
                 </li> -->
                 
-                <li class="nav-item <?php if($page_name=='add-student.php' || $page_name=='view-student.php'){ ?> menu-open <?php } ?>">
+                <!-- <li class="nav-item <?php if($page_name=='add-student.php' || $page_name=='view-student.php'){ ?> menu-open <?php } ?>">
                     <a href="#" class="nav-link <?php if($page_name=='add-student' || $page_name=='view-student.php'){ ?> active <?php } ?>">
                         <i class="nav-icon fab fa-product-hunt"></i>
                         <p>
@@ -192,7 +201,7 @@ $page_name  = basename($_SERVER['PHP_SELF']);
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 
                 <li class="nav-item <?php if($page_name=='add-post.php' || $page_name=='view-post.php'){ ?> menu-open <?php } ?>">
                     <a href="#" class="nav-link <?php if($page_name=='add-post' || $page_name=='view-post.php'){ ?> active <?php } ?>">

@@ -58,6 +58,13 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-plus-square"></i> Add Student</h3>
                                     </div>
+
+                                    <div class="card-footer">
+                                    <a href="view-student.php">
+                                            <button type="submit" name="submit" class="btn btn-primary">Back to View Student</button>
+                                            </a>
+                                        </div>
+
                                     <!-- /.card-header -->
                                     <!-- form start -->
                                     <form method="post" name="student_form" id="student_form">

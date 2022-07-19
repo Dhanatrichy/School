@@ -48,6 +48,13 @@ include('includes/database.php');
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-file-alt"></i> View Student</h3>
                                     </div>
+
+                                    <div class="card-footer">
+                                    <a href="add-student.php">
+                                            <button type="submit" name="submit" class="btn btn-primary">Add Student</button>
+                                            </a>
+                                        </div>
+
                                     <div class="card-body">
                                         <table id="example1" class="table table-bordered table-striped">
                                             <thead>
