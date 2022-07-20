@@ -114,9 +114,9 @@ include('includes/database.php');
                         <!-- /.card -->
                     </div><!-- /.container-fluid -->
                     
-                    <div class="card-footer">
+                    <!-- <div class="card-footer">
                                             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-                                        </div>
+                                        </div> -->
                     <div class="modal fade" id="modal-lg">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
