@@ -181,9 +181,6 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                                         </div>
 
-                                        <div class="card-footer">
-                                            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-                                        </div>
                                     </form>
                                 </div>
                             </div>
