@@ -105,6 +105,13 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                     <input type="text" class="form-control" id="email" name="email" placeholder="Email Id" value="<?php echo $email; ?>">
                                                 </div>
                                             </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                <label for="experience">Teacher's Image*</label><br>
+                                                        <input type="file" name="image" />
+                                                </div>
+                                            </div>
+
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="password">Password *</label>
@@ -174,10 +181,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                 <label for="experience">Proof *</label><br>
-                                                   
                                                         <input type="file" name="image" />
-
-                                                   
                                                 </div>
                                             </div>
                                             <div class="col-md-12">

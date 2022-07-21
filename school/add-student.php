@@ -114,7 +114,13 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                         <input type="text" class="form-control" id="name" name="name" placeholder="Student Name" value="<?php echo $name; ?>">
                                                     </div>
                                                 </div>
-                                                
+                                                <div class="col-md-4">
+                                                <div class="form-group">
+                                                <label for="experience">Student's Image*</label><br>
+                                                        <input type="file" name="image" />
+                                                </div>
+                                            </div> 
+
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="email">Email Id *</label>
@@ -200,12 +206,21 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                         <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Pin / Zip Code" value="<?php echo $zipcode; ?>">
                                                     </div>
                                                 </div>
+
+                                                <div class="col-md-4">
+                                                <div class="form-group">
+                                                <label for="experience">Proof *</label><br>
+                                                        <input type="file" name="image" />
+                                                </div>
+                                            </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="address">Address *</label>
                                                         <textarea class="form-control" id="address" name="address" placeholder="Address"><?php echo $address; ?></textarea>
                                                     </div>
                                                 </div>
+
+                                               
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="subjects">Subjects *</label>
