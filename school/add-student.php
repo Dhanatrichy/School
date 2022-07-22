@@ -115,11 +115,11 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                <div class="form-group">
-                                                <label for="experience">Student's Image*</label><br>
-                                                        <input type="file" name="image" />
+                                                    <div class="form-group">
+                                                        <label for="single_image">Student's Image</label>
+                                                        <input type="file" class="form-control" id="single_image" accept="image/*" name="single_image">
+                                                    </div>
                                                 </div>
-                                            </div> 
 
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -208,11 +208,11 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                 </div>
 
                                                 <div class="col-md-4">
-                                                <div class="form-group">
-                                                <label for="experience">Proof *</label><br>
-                                                        <input type="file" name="image" />
+                                                    <div class="form-group">
+                                                        <label for="single_image">Proof*</label>
+                                                        <input type="file" class="form-control" id="single_image" accept="image/*" name="single_image">
+                                                    </div>
                                                 </div>
-                                            </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="address">Address *</label>

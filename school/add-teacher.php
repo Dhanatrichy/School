@@ -69,7 +69,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form method="post" name="teacher_form" id="teacher_form" enctype="multipart/form-data">>
+                                <form method="post" name="teacher_form" id="teacher_form" enctype="multipart/form-data">
                                     <input type="hidden" name="action" value="<?php echo $action; ?>">
                                     <input type="hidden" name="id" value="<?php echo $id; ?>">
                                     <div class="card-body">
@@ -106,11 +106,11 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <div class="form-group">
-                                                <label for="experience">Teacher's Image*</label><br>
-                                                        <input type="file" name="image" />
+                                                    <div class="form-group">
+                                                        <label for="single_image">Teacher's Image*</label>
+                                                        <input type="file" class="form-control" id="single_image" accept="image/*" name="single_image">
+                                                    </div>
                                                 </div>
-                                            </div>
 
                                             <div class="col-md-4">
                                                 <div class="form-group">
@@ -179,11 +179,11 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <div class="form-group">
-                                                <label for="experience">Proof *</label><br>
-                                                        <input type="file" name="image" />
+                                                    <div class="form-group">
+                                                        <label for="single_image">Proof*</label>
+                                                        <input type="file" class="form-control" id="single_image" accept="image/*" name="single_image">
+                                                    </div>
                                                 </div>
-                                            </div>
 
                                             <div class="col-md-4">
                                                 <div class="form-group">

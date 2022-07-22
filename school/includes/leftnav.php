@@ -47,7 +47,7 @@ $page_name  = basename($_SERVER['PHP_SELF']);
                     </a>
                 </li>
 
-                <li class="nav-item <?php if($page_name=='class.php' || $page_name=='section.php'|| $page_name=='assign_class.php'){ ?> menu-open <?php } ?>">
+                <li class="nav-item <?php if($page_name=='class.php' || $page_name=='section.php'|| $page_name=='level.php'|| $page_name=='subject.php'){ ?> menu-open <?php } ?>">
                     <a href="#" class="nav-link <?php if($page_name=='class' || $page_name==''){ ?> active <?php } ?>">
                         <i class="nav-icon fab fa-product-hunt"></i>
                         <p>
@@ -122,7 +122,7 @@ $page_name  = basename($_SERVER['PHP_SELF']);
                         </p>
                     </a>
                 </li>
-                
+
                 <li class="nav-item">
                     <a href="period.php" class="nav-link <?php if($page_name=='period.php'){ ?> active <?php } ?>">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
