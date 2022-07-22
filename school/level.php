@@ -76,24 +76,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label for="subjects ">Subjects</label>
-                                                    <select class="select2" name="subjects[]" id="subjects" multiple="multiple" data-placeholder="Select Subjects" style="width: 100%;">
-                                                        <option value="">-- Select Subjects --</option>
-                                                        <?php
-                                                        $subject_decode =   json_decode($subjects);
-                                                        $query = "SELECT * FROM tbl_subject where status='active' ORDER BY name ASC";
-                                                        $result = mysqli_query($db, $query);
-                                                        while ($row = mysqli_fetch_assoc($result)) {
-                                                        ?>
-                                                            <option <?php if (in_array($row['id'], $subject_decode)) { ?> selected="selected" <?php } ?> value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
-                                                        <?php
-                                                        }
-                                                        ?>
-                                                    </select>
-                                                </div>
-                                            </div>
+                                        
                                         <!-- /.card-body -->
                                         <div class="card-footer">
                                             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
@@ -122,7 +105,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                     ?>
                                                 <tr class="row_<?php echo $row['id']; ?>">
                                                         <td><?php echo $row['name']; ?></td>
-                                                        <td>
+                                                        
                                                             <?php if ($row['status'] == 'active') { ?>
                                                             <a href="javascript:void(0);" class="status_<?php echo $row['id']; ?>"><span class="badge bg-success" onclick="change_status(<?php echo $row['id']; ?>, 'inactive', 'modules/class/request.php')">Active</span></a>
                                                             <?php } else { ?>
