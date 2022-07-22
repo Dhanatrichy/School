@@ -72,6 +72,16 @@ $page_name  = basename($_SERVER['PHP_SELF']);
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="level.php" class="nav-link <?php if($page_name=='level.php'){ ?> active <?php } ?>">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Level Management
+                        </p>
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a href="assign_class.php" class="nav-link <?php if($page_name=='assign_class.php'){ ?> active <?php } ?>">
                         <i class="nav-icon fas fa-tachometer-alt"></i>

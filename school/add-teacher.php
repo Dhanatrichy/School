@@ -112,7 +112,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="password">Password *</label>
                                                     <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="<?php echo $password; ?>">
@@ -160,7 +160,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                     <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Pin / Zip Code" value="<?php echo $zipcode; ?>">
                                                 </div>
                                             </div>
-                                            <div class="col-md-12">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="address">Address *</label>
                                                     <textarea class="form-control" id="address" name="address" placeholder="Address"><?php echo $address; ?></textarea>
@@ -184,7 +184,26 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                         <input type="file" name="image" />
                                                 </div>
                                             </div>
-                                            <div class="col-md-12">
+
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="city_id">Level *</label>
+                                                    <select class="form-control city_id" name="city_id" id="city_id">
+                                                        <option value="">-- Select Level --</option>
+                                                        <?php
+                                                        $query_city = "SELECT * FROM tbl_city where status='active' and sid='" . $state_id . "' ORDER BY name ASC";
+                                                        $result_city = mysqli_query($db, $query_city);
+                                                        while ($row_city = mysqli_fetch_assoc($result_city)) {
+                                                        ?>
+                                                            <option <?php if ($row_city['id'] == $city_id) { ?> selected="selected" <?php } ?> value="<?php echo $row_city['id']; ?>"><?php echo $row_city['name']; ?></option>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="subjects">Subjects *</label>
                                                     <select class="select2" name="subjects[]" id="subjects" multiple="multiple" data-placeholder="Select Subjects" style="width: 100%;">
