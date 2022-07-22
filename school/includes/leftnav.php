@@ -83,13 +83,15 @@ $page_name  = basename($_SERVER['PHP_SELF']);
                 </li>
 
                 <li class="nav-item">
-                    <a href="assign_class.php" class="nav-link <?php if($page_name=='assign_class.php'){ ?> active <?php } ?>">
+                    <a href="subject.php" class="nav-link <?php if($page_name=='subject.php'){ ?> active <?php } ?>">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Subject Allocation
+                            Subject Management
                         </p>
                     </a>
                 </li>
+
+                
                     </ul>
                 </li>
 
@@ -111,6 +113,16 @@ $page_name  = basename($_SERVER['PHP_SELF']);
                     </a>
                 </li>
                  -->
+
+                 <li class="nav-item">
+                    <a href="assign_class.php" class="nav-link <?php if($page_name=='assign_class.php'){ ?> active <?php } ?>">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Subject Allocation
+                        </p>
+                    </a>
+                </li>
+                
                 <li class="nav-item">
                     <a href="period.php" class="nav-link <?php if($page_name=='period.php'){ ?> active <?php } ?>">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
