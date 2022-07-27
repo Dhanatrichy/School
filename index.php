@@ -31,7 +31,7 @@ if(isset($_SESSION['admin_id'])){
             <!-- /.login-logo -->
             <div class="card">
                 <div class="card-body login-card-body">
-                    <p class="login-box-msg">Sign in to start your session </p>
+                    <p class="login-box   -msg">Sign in to start your session </p>
 
                     <form method="post">
                         <label for="login_as">Login As :</label>

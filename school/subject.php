@@ -65,7 +65,27 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                     <!-- form start -->
                                     <form method="post" name="subject_form" id="subject_form">
                                         <input type="hidden" name="action" value="<?php echo $action; ?>">
-                                        <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                        <input type="hidden" name="id" value="<?php echo $id; ?>"><br>
+
+                                        <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="subjects">Level</label>
+                                                    <select class="select2" name="subjects[]" id="subjects" multiple="multiple" data-placeholder="Select Level" style="width: 100%;">
+                                                        <option value="">-- Select level --</option>
+                                                        <?php
+                                                        $subject_decode =   json_decode($subjects);
+                                                        $query = "SELECT * FROM tbl_level where status='active' ORDER BY name ASC";
+                                                        $result = mysqli_query($db, $query);
+                                                        while ($row = mysqli_fetch_assoc($result)) {
+                                                        ?>
+                                                            <option <?php if (in_array($row['id'], $subject_decode)) { ?> selected="selected" <?php } ?> value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-md-12">
