@@ -57,6 +57,7 @@ include('includes/database.php');
                                                     <th>Image</th>
                                                     <th>Author</th>
                                                     <th>Counts</th>
+                                                    <th>Destination</th>
                                                     <th>Date</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
@@ -89,6 +90,8 @@ include('includes/database.php');
                                                             
                                                             ?>
                                                         </td>
+
+                                                        
                                                         <td><?php echo date('d/m/Y', $row['addedon']); ?></td>
                                                         <td>
                                                             <?php if(($_SESSION['teacher_id']==$row['author_id']) && ($_SESSION['user_type']==$row['author_type'])){ ?>

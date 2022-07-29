@@ -80,7 +80,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label for="single_image">Upload Image</label>
-                                                        <input type="file" class="form-control" id="single_image" accept="image/*" name="single_image">
+                                                        <input type="file" class="form-control" id="single_image" accept="audio/*,video/*,image/*"  name="single_image">
                                                     </div>
                                                 </div>
                                                 
@@ -111,13 +111,38 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                         </select>
                                                     </div>
                                                 </div>
-                                                
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="audience_type">Select Audience Type*</label>
+                                                        <select class="form-control select2" name="audience_type[]" id="audience_type" multiple placeholder="-- Select Audience Type --" value="<?php echo $udience_type; ?>">
+                                                            <?php 
+                                                                $assignAudience = array();
+                                                                $audience_query = "SELECT * FROM tbl_assign_audience_post WHERE post_id = '".$id."' ";
+                                                                $myAudience = mysqli_query($db, $audience_query);
+                                                                while ($row = mysqli_fetch_array($myAudience)) {
+                                                                    $assignAudience[] = $row['audience_id'];
+                                                                }
+
+                                                            ?>
+                                                            <?php 
+                                                                $query = "SELECT * FROM tbl_audience_type WHERE status='active' GROUP BY id ORDER BY name ASC";
+                                                                $result = mysqli_query($db, $query);
+                                                                while ($row = mysqli_fetch_assoc($result)) {
+
+                                                                    $slected_audience= (in_array($row['id'],$assignAudience)) ? 'selected' : NULL;
+                                                            ?>
+                                                                <option value="<?= $row['id'];?>" <?= $slected_audience ?> > <?=$row['name'];?>
+                                                                </option>
+                                                            <?php } ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
                                                 <div class="col-md-4">
                                                     
                                                     <div class="form-group">
                                                         <label for="class_assign_id">Select Class</label>
 
-                                                        <select class="form-control select2" name="class_assign_id[]" id="class_assign_id" multiple placeholder="-- Select Class --">
+                                                        <select class="form-control select2" name="class_assign_id[]" id="class_assign_id" multiple placeholder="-- Select Class --" >
                                                             <option value="all">ALL</option>
                                                             <?php 
                                                                 $assignClasses = array();
@@ -168,37 +193,12 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label for="audience_type">Select Audience Type</label>
-                                                        <select class="form-control select2" name="audience_type[]" id="audience_type" multiple placeholder="-- Select Audience Type --">
-                                                            <?php 
-                                                                $assignAudience = array();
-                                                                $audience_query = "SELECT * FROM tbl_assign_audience_post WHERE post_id = '".$id."' ";
-                                                                $myAudience = mysqli_query($db, $audience_query);
-                                                                while ($row = mysqli_fetch_array($myAudience)) {
-                                                                    $assignAudience[] = $row['audience_id'];
-                                                                }
-
-                                                            ?>
-                                                            <?php 
-                                                                $query = "SELECT * FROM tbl_audience_type WHERE status='active' GROUP BY id ORDER BY name ASC";
-                                                                $result = mysqli_query($db, $query);
-                                                                while ($row = mysqli_fetch_assoc($result)) {
-
-                                                                    $slected_audience= (in_array($row['id'],$assignAudience)) ? 'selected' : NULL;
-                                                            ?>
-                                                                <option value="<?= $row['id'];?>" <?= $slected_audience ?> > <?=$row['name'];?>
-                                                                </option>
-                                                            <?php } ?>
-                                                        </select>
-                                                    </div>
-                                                </div>
+                                                
                                                 
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="description">Description *</label>
-                                                        <textarea id="summernote" name="description">
+                                                        <textarea id="summernote" name="description"value="<?php echo $description; ?>">
                                                             <?php echo $description; ?>
                                                         </textarea>
                                                     </div>
@@ -234,7 +234,13 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
             if ($title == "") {
                 $errorMsg .= "Please Enter The Title.<br />";
             }
-
+            if ($audience_type == "") {
+                $errorMsg .= "Please Select Audience type.<br />";
+            }
+            if ($description == "") {
+                $errorMsg .= "Please Enter Description.<br />";
+            }
+            
             if ($errorMsg != '') {
                 echo "<script>";
                 echo "toastr.error('" . $errorMsg . "')";
@@ -262,6 +268,13 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                     $update_id = update('tbl_post', $fields, $static, $data, $where);
                     if ($update_id) {
 
+                        if (!empty($_POST['audience_type'])) {
+                            
+                            $audienceIds = $_POST['audience_type'];
+                            $insertAud = multipal_insert_data('tbl_assign_audience_post', $id, $audienceIds, 'post_id', 'audience_id', $id);
+                            
+                        }
+                        
                         if (!empty($_POST['class_assign_id'])) {
                             
                             $classIds = $_POST['class_assign_id'];
@@ -276,12 +289,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                             
                         }
 
-                        if (!empty($_POST['audience_type'])) {
-                            
-                            $audienceIds = $_POST['audience_type'];
-                            $insertAud = multipal_insert_data('tbl_assign_audience_post', $id, $audienceIds, 'post_id', 'audience_id', $id);
-                            
-                        }
+                       
 
                         $success = "Updated Successfully.";
                         echo "<script>";

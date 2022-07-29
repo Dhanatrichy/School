@@ -94,7 +94,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'submit') {
         echo json_encode(array('status' => 'error', 'errors' => $errorMsg));
     }
     
-    $subjects   =   json_encode($_POST['subjects']);
+    $subjects=json_encode($_POST['subjects']);
 
     if (count($errorMsg) == 0) {
         if ($id != "") {
