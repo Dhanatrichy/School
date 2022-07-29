@@ -6,7 +6,7 @@ if (!isset($_SESSION['admin_id'])) {
 $action = 'submit';
 $id = base64_decode($_GET['id']);
 if ($_GET['action'] == "edit" && isset($_GET['id'])) {
-    $max = "select * from tbl_class where id='" . $id . "'";
+    $max = "select * from tbl_level where id='" . $id . "'";
     $max2 = mysqli_query($db, $max);
     $max3 = mysqli_fetch_assoc($max2);
     extract($max3);
@@ -97,7 +97,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                             </thead>
                                             <!-- <tbody>
                                                 <?php
-                                                $query = "SELECT * FROM tbl_class ORDER BY name ASC";
+                                                $query = "SELECT * FROM tbl_level ORDER BY name ASC";
                                                 $result = mysqli_query($db, $query);
                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                     ?>
