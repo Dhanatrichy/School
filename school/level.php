@@ -19,7 +19,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Classes | LMS</title>
+        <title>Level | LMS</title>
 
         <?php include_once 'includes/header.php'; ?>
     </head>
@@ -62,7 +62,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                     </div>
                                     <!-- /.card-header -->
                                     <!-- form start -->
-                                    <form method="post" name="class_form" id="class_form">
+                                    <form method="post" name="level_form" id="level_form">
                                         <input type="hidden" name="action" value="<?php echo $action; ?>">
                                         <input type="hidden" name="id" value="<?php echo $id; ?>">
                                         <div class="card-body">
