@@ -15,7 +15,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'submit') {
     }
     if (count($errorMsg) > 0) {
         echo json_encode(array('status' => 'error', 'errors' => $errorMsg));
-    }
+    }  
 
     if (count($errorMsg) == 0) {
         if ($id != "") {

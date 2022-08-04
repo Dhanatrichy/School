@@ -19,7 +19,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Level | LMS</title>
+        <title>Classes | LMS</title>
 
         <?php include_once 'includes/header.php'; ?>
     </head>
@@ -62,7 +62,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                     </div>
                                     <!-- /.card-header -->
                                     <!-- form start -->
-                                    <form method="post" name="level_form" id="level_form">
+                                    <form method="post" name="class_form" id="class_form">
                                         <input type="hidden" name="action" value="<?php echo $action; ?>">
                                         <input type="hidden" name="id" value="<?php echo $id; ?>">
                                         <div class="card-body">
@@ -95,7 +95,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
-                                            <!-- <tbody>
+                                            <tbody>
                                                 <?php
                                                 $query = "SELECT * FROM tbl_level ORDER BY name ASC";
                                                 $result = mysqli_query($db, $query);
@@ -105,22 +105,22 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                         <td><?php echo $row['name']; ?></td>
                                                         <td>
                                                             <?php if ($row['status'] == 'active') { ?>
-                                                            <a href="javascript:void(0);" class="status_<?php echo $row['id']; ?>"><span class="badge bg-success" onclick="change_status(<?php echo $row['id']; ?>, 'inactive', 'modules/class/request.php')">Active</span></a>
+                                                            <a href="javascript:void(0);" class="status_<?php echo $row['id']; ?>"><span class="badge bg-success" onclick="change_status(<?php echo $row['id']; ?>, 'inactive', 'modules/level/request.php')">Active</span></a>
                                                             <?php } else { ?>
-                                                            <a href="javascript:void(0);" class="status_<?php echo $row['id']; ?>"><span class="badge bg-danger" onclick="change_status(<?php echo $row['id']; ?>, 'active', 'modules/class/request.php')">Inactive</span></a>
+                                                            <a href="javascript:void(0);" class="status_<?php echo $row['id']; ?>"><span class="badge bg-danger" onclick="change_status(<?php echo $row['id']; ?>, 'active', 'modules/level/request.php')">Inactive</span></a>
                                                             <?php } ?>		
                                                         </td>
                                                         <td >
                                                             <div class="btn-group btn-group-sm">
                                                                 <a href="class.php?id=<?php echo base64_encode($row['id']); ?>&action=edit" class="btn btn-info"><i class="fas fa-eye"></i></a>
-                                                                <a href="javascript:void(0);" class="btn btn-danger"><i onclick="delete_detail(<?php echo $row['id']; ?>, 'modules/class/request.php')" class="fas fa-trash"></i></a>
+                                                                <a href="javascript:void(0);" class="btn btn-danger"><i onclick="delete_detail(<?php echo $row['id']; ?>, 'modules/level/request.php')" class="fas fa-trash"></i></a>
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     <?php
                                                 }
                                                 ?>
-                                            </tbody> -->
+                                            </tbody>
                                         </table>
                                     </div>
                                     <!-- /.card-body -->

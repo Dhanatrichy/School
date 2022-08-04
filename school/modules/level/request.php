@@ -11,7 +11,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'submit') {
     }
     $name_exist = check_exist($name, 'tbl_level', 'name');
     if ($name_exist == 1) {
-        $errorMsg[] = "Level Already Exist.";
+        $errorMsg[] = "Level Name Already Exist.";
     }
     if (count($errorMsg) > 0) {
         echo json_encode(array('status' => 'error', 'errors' => $errorMsg));
