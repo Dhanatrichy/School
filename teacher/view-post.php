@@ -57,7 +57,6 @@ include('includes/database.php');
                                                     <th>Image</th>
                                                     <th>Author</th>
                                                     <th>Counts</th>
-                                            
                                                     <th>Date</th>
                                                     <th>Status</th>
                                                     <th>Action</th>

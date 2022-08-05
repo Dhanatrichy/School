@@ -21,7 +21,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Classes | LMS</title>
 
-        <?php include_once 'includes/header.php'; ?>
+        <?php include_once 'includes/header.php'; ?>  
     </head>
     <body class="hold-transition sidebar-mini layout-fixed text-sm">
         <div class="wrapper">
@@ -112,7 +112,7 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                         </td>
                                                         <td >
                                                             <div class="btn-group btn-group-sm">
-                                                                <a href="class.php?id=<?php echo base64_encode($row['id']); ?>&action=edit" class="btn btn-info"><i class="fas fa-eye"></i></a>
+                                                                <a href="level.php?id=<?php echo base64_encode($row['id']); ?>&action=edit" class="btn btn-info"><i class="fas fa-eye"></i></a>
                                                                 <a href="javascript:void(0);" class="btn btn-danger"><i onclick="delete_detail(<?php echo $row['id']; ?>, 'modules/level/request.php')" class="fas fa-trash"></i></a>
                                                             </div>
                                                         </td>
