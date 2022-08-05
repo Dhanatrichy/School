@@ -111,7 +111,7 @@ include('includes/database.php');
                                                             <div class="btn-group btn-group-sm">
                                                                 <a href="view-post_detail.php?id=<?php echo base64_encode($row['id']); ?>&action=view_detail" target="_blank" class="btn btn-warning"><i class="fas fa-eye"></i></a>
                                                                 <?php if(($_SESSION['teacher_id']==$row['author_id']) && ($_SESSION['user_type']==$row['author_type'])){ ?>
-                                                                    <a href="add-post.php?id=<?php echo base64_encode($row['id']); ?>&action=edit" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                                                    <a href="add-post.php?id=<?php echo base64_encode($row['id']); ?>&action=e dit" class="btn btn-info"><i class="fas fa-edit"></i></a>
                                                                     <a href="javascript:void(0);" class="btn btn-danger"><i onclick="delete_detail(<?php echo $row['id']; ?>, 'modules/posts/request.php')" class="fas fa-trash"></i></a>
                                                                 <?php } ?>
                                                             </div>
