@@ -185,23 +185,23 @@ if ($_GET['action'] == "edit" && isset($_GET['id'])) {
                                                     </div>
                                                 </div>
 
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="city_id">Level *</label>
-                                                    <select class="form-control city_id" name="city_id" id="city_id">
-                                                        <option value="">-- Select Level --</option>
-                                                        <?php
-                                                        $query_city = "SELECT * FROM tbl_city where status='active' and sid='" . $state_id . "' ORDER BY name ASC";
-                                                        $result_city = mysqli_query($db, $query_city);
-                                                        while ($row_city = mysqli_fetch_assoc($result_city)) {
-                                                        ?>
-                                                            <option <?php if ($row_city['id'] == $city_id) { ?> selected="selected" <?php } ?> value="<?php echo $row_city['id']; ?>"><?php echo $row_city['name']; ?></option>
-                                                        <?php
-                                                        }
-                                                        ?>
-                                                    </select>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="level_id">Level *</label>
+                                                        <select class="form-control" name="level_id" id="level_id">
+                                                            <option value="">-- Select Level --</option>
+                                                            <?php
+                                                            $query = "SELECT * FROM tbl_level where status='active' ORDER BY name ASC";
+                                                            $result = mysqli_query($db, $query);
+                                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                                ?>
+                                                            <option <?php if($row['id']==$section_id){ ?> selected="selected" <?php } ?> value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+                                                                <?php
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                            </div>
 
                                             <div class="col-md-6">
                                                 <div class="form-group">
